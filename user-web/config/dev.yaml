@@ -1,0 +1,23 @@
+system:
+  host: 127.0.0.1
+  port: 8021
+  name: user-web
+nacos:
+  host: 192.168.28.245
+  port: 8848
+  nameSpace: 93e9005f-d1ec-4988-8586-332927badab0
+  user: nacos
+  password: nacos
+  dataId: user-web.json
+  group: dev
+
+jwt:
+  key: "piwriw"
+  #30天过期
+  expiresAt: 2592000
+grpcServer:
+  host: 127.0.0.1
+  port: 50051
+consul:
+  ip: 192.168.28.145
+  port: 8500
