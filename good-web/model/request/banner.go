@@ -1,0 +1,7 @@
+package request
+
+type BannerReq struct {
+	Image string `form:"image" json:"image" binding:"url"`
+	Index int    `form:"index" json:"index" binding:"required"`
+	Url   string `form:"url" json:"url" binding:"url"`
+}
