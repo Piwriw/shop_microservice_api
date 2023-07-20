@@ -49,7 +49,7 @@ func InitSrvConn2() error {
 	}
 
 	userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", userSrcHost, userSrvPort), grpc.WithTransportCredentials(insecure.NewCredentials()))
-	//userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", setting.Conf.GrpcServer.Host, setting.Conf.GrpcServer.Port), grpc.WithInsecure())
+	//userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", setting.Conf.UserGrpcServer.Host, setting.Conf.UserGrpcServer.Port), grpc.WithInsecure())
 	if err != nil {
 		zap.S().Errorw("[InitSrvConn] 连接 【用户服务失败】", "msg", err.Error())
 		return err

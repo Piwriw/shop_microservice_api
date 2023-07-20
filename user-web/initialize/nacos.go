@@ -1,10 +1,10 @@
 package initialize
 
 import (
-	"encoding/json"
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
+	"gopkg.in/yaml.v3"
 
 	"shop_api/user-web/global"
 )
@@ -56,7 +56,7 @@ func InitNacos() error {
 	//fmt.Println(content) //字符串 - yaml
 	//serverConfig := global.AppConfig{}
 	//想要将一个json字符串转换成struct，需要去设置这个struct的tag
-	err = json.Unmarshal([]byte(content), &global.AppConf)
+	err = yaml.Unmarshal([]byte(content), &global.AppConf)
 	if err != nil {
 		return err
 	}

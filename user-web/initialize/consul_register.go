@@ -2,8 +2,8 @@ package initialize
 
 import (
 	"github.com/nacos-group/nacos-sdk-go/inner/uuid"
-	"shop_api/good-web/global"
-	"shop_api/good-web/utils/register/consul"
+	"shop_api/user-web/global"
+	"shop_api/user-web/utils/register/consul"
 )
 
 func InitRegisterClient() (consul.RegistryClient, error, string) {
