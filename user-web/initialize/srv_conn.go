@@ -3,6 +3,7 @@ package initialize
 import (
 	"fmt"
 	"github.com/hashicorp/consul/api"
+	_ "github.com/mbobakov/grpc-consul-resolver"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -13,7 +14,7 @@ import (
 // InitSrvConn 配置了负载均衡的grpc client
 func InitSrvConn() error {
 	consulInfo := global.AppConf.Consul
-	userConn, err := grpc.Dial(fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulInfo.IP, consulInfo.Port, global.AppConf.System.Name),
+	userConn, err := grpc.Dial(fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulInfo.IP, consulInfo.Port, global.AppConf.UserGrpcServer.Name),
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`))
 	if err != nil {
