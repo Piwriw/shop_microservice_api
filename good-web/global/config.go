@@ -29,7 +29,7 @@ type System struct {
 	Host string   `json:"host" yaml:"host" mapstructure:"host"`
 	Port int      `json:"port" yaml:"port" mapstructure:"port"`
 	Name string   `json:"name" yaml:"name" mapstructure:"name"`
-	Tags []string `json:"tags" yaml:"tags" mapstructure:"name"`
+	Tags []string `json:"tags" yaml:"tags" mapstructure:"tags"`
 }
 type GrpcServer struct {
 	Host string `json:"host" yaml:"host" mapstructure:"host"`
